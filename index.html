@@ -130,7 +130,31 @@
               )}
             </div>
 
-        
+        <div className="controls">
+              <button onClick={() => dealCards(5)}>Deal 5</button>
+              <button onClick={() => dealCards(7)}>Deal 7</button>
+              <button onClick={resetDeck}>Reset</button>
+              <button onClick={tossCard}>Toss</button>
+              <button onClick={regroupCards}>Regroup</button>
+              <button onClick={addWildcard}>Wildcard</button>
+            </div>
+            <div className="cards-list">
+              {selectedCards.map((card) => (
+                <Card
+                  key={card.id}
+                  value={card.value}
+                  suit={card.suit}
+                  isPicked={pickedCard && pickedCard.id === card.id}
+                  onClick={() => handleCardClick(card)}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      };
 
-</body>
+      ReactDOM.render(<DeckOfCards />, document.getElementById('root'));
+    </script>
+  </body>
 </html>
+
