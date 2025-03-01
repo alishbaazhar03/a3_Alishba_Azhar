@@ -100,6 +100,21 @@
           const newCard = { id: idCounter++, value: randomValue, suit: randomSuit };
           setSelectedCards([...selectedCards, newCard]);
         };
+
+         const dealCards = (num) => {
+          setSelectedCards([]);
+          const newCards = [];
+          const remainingDeck = [...deck];
+          for (let i = 0; i < num; i++) {
+            const randomIndex = Math.floor(Math.random() * remainingDeck.length);
+            const card = remainingDeck[randomIndex];
+            newCards.push(card);
+            remainingDeck.splice(randomIndex, 1);
+          }
+          setDeck(remainingDeck);
+          setSelectedCards(newCards);
+        };
+
         
 
 </body>
