@@ -10,6 +10,21 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+     
+      const Card = ({ value, suit, onClick, isPicked }) => {
+        return (
+          <div
+            className={`card ${isPicked ? 'picked' : ''}`}
+            onClick={onClick}
+          >
+            <div className="value">{value}</div>
+            <div className="suit">{suit}</div>
+          </div>
+        );
+      };
 
 </body>
 </html>
