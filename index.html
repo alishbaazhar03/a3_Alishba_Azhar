@@ -70,5 +70,12 @@
           setSelectedCards([]);
         };
 
+         const tossCard = () => {
+          if (pickedCard) {
+            setSelectedCards(selectedCards.filter((c) => c.id !== pickedCard.id));
+            setPickedCard(null);
+          }
+        };
+
 </body>
 </html>
