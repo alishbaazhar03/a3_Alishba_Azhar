@@ -94,5 +94,13 @@
           setSelectedCards([...selectedCards, card]);
         };
 
+        const addWildcard = () => {
+          const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+          const randomValue = values[Math.floor(Math.random() * values.length)];
+          const newCard = { id: idCounter++, value: randomValue, suit: randomSuit };
+          setSelectedCards([...selectedCards, newCard]);
+        };
+        
+
 </body>
 </html>
