@@ -51,8 +51,18 @@
             const pickedIndex = swappedCards.findIndex(
               (c) => c.id === pickedCard.id
             );
-            const clickedIndex = swappedCards.findIndex((c) => c.id === card.id);
+         const clickedIndex = swappedCards.findIndex((c) => c.id === card.id);
 
+          const temp = swappedCards[pickedIndex];
+            swappedCards[pickedIndex] = swappedCards[clickedIndex];
+            swappedCards[clickedIndex] = temp;
+        
+            setSelectedCards(swappedCards);
+            setPickedCard(null);
+          } else {
+            setPickedCard(card);
+          }
+        }; 
 
 </body>
 </html>
