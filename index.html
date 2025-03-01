@@ -41,7 +41,11 @@
         const [deck, setDeck] = React.useState(initialDeck);
         const [selectedCards, setSelectedCards] = React.useState([]);
         const [pickedCard, setPickedCard] = React.useState(null);
-        
+
+        const handleCardClick = (card) => {
+          if (pickedCard && pickedCard.id === card.id) {
+            setPickedCard(null);
+          } else if (pickedCard) {
 
 </body>
 </html>
