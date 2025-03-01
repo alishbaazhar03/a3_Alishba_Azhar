@@ -77,5 +77,10 @@
           }
         };
 
+        const regroupCards = () => {
+        const shuffled = selectedCards.sort(() => Math.random() - 0.5);
+        setSelectedCards(shuffled);
+         };
+
 </body>
 </html>
