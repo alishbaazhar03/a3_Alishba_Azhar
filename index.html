@@ -32,5 +32,16 @@
         const initialDeck = [];
         let idCounter = 0;
 
+     for (let suit of suits) {
+          for (let value of values) {
+            initialDeck.push({ value, suit, id: idCounter++ });
+          }
+        }
+
+        const [deck, setDeck] = React.useState(initialDeck);
+        const [selectedCards, setSelectedCards] = React.useState([]);
+        const [pickedCard, setPickedCard] = React.useState(null);
+        
+
 </body>
 </html>
