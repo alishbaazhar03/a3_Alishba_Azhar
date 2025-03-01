@@ -53,9 +53,10 @@
             );
          const clickedIndex = swappedCards.findIndex((c) => c.id === card.id);
 
-          const temp = swappedCards[pickedIndex];
-            swappedCards[pickedIndex] = swappedCards[clickedIndex];
-            swappedCards[clickedIndex] = temp;
+          [swappedCards[pickedIndex], swappedCards[clickedIndex]] = [
+          swappedCards[clickedIndex],
+          swappedCards[pickedIndex],
+          ];
         
             setSelectedCards(swappedCards);
             setPickedCard(null);
